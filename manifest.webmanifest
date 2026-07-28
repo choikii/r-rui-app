@@ -1,0 +1,25 @@
+{
+  "name": "R.Rui 创作者工作台",
+  "short_name": "R.Rui",
+  "description": "用于整理自媒体账号、灵感主题、内容安排、接广合作和数据复盘的个人工作台。",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf7ef",
+  "theme_color": "#ea81a0",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icon-r-rui.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-r-rui.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
