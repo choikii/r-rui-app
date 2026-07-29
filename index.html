@@ -1455,6 +1455,166 @@
       gap: 18px;
     }
 
+    .account-app-home {
+      display: grid;
+      gap: 14px;
+    }
+
+    .account-app-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .account-app-card {
+      border: 1px solid var(--border-light);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.88);
+      padding: 16px;
+      min-height: 122px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: left;
+      color: var(--text);
+    }
+
+    .account-app-card:active {
+      transform: scale(0.98);
+    }
+
+    .account-app-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(54, 68, 64, 0.09);
+    }
+
+    .account-app-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .account-app-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--brand-light);
+      color: var(--brand-hover);
+      font-size: 18px;
+    }
+
+    .account-app-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .account-app-card p {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .account-module-page {
+      display: grid;
+      gap: 12px;
+    }
+
+    .account-module-topbar {
+      position: sticky;
+      top: 78px;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--border-light);
+      box-shadow: 0 8px 22px rgba(88, 55, 41, 0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .account-module-title {
+      min-width: 0;
+    }
+
+    .account-module-title h3 {
+      font-size: 17px;
+      margin: 0 0 2px;
+      font-weight: 600;
+    }
+
+    .account-module-title p {
+      margin: 0;
+      color: var(--text-tertiary);
+      font-size: 12px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .account-add-panel {
+      border: 1px solid var(--border-light);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.88);
+      overflow: hidden;
+    }
+
+    .account-add-panel summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .account-add-panel summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .account-add-panel summary::after {
+      content: "+";
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      color: var(--brand-hover);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .account-add-panel[open] summary::after {
+      content: "−";
+    }
+
+    .account-add-body {
+      padding: 0 16px 16px;
+    }
+
+    .account-record-card {
+      border: 1px solid var(--border-light);
+      border-radius: 22px;
+      background: rgba(255,255,255,0.88);
+      padding: 14px;
+    }
+
     .theme-card {
       border: 1px solid var(--border);
       border-radius: var(--radius);
@@ -2521,6 +2681,25 @@
         background: var(--brand-light);
         color: #7b3650;
       }
+      .account-app-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .account-app-card {
+        min-height: 112px;
+        padding: 12px;
+        border-radius: 20px;
+      }
+      .account-app-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 14px;
+      }
+      .account-module-topbar {
+        top: calc(52px + env(safe-area-inset-top));
+        border-radius: 20px;
+        padding: 10px;
+      }
       .app-module-card:nth-child(4n + 1) .app-module-icon { background: #f4ccd5; color: #b94f73; }
       .app-module-card:nth-child(4n + 2) .app-module-icon { background: #e8f1dc; color: #6f9253; }
       .app-module-card:nth-child(4n + 3) .app-module-icon { background: #faeadf; color: #bb7559; }
@@ -2611,6 +2790,10 @@
         grid-template-columns: 1fr !important;
       }
 
+      .account-app-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
       .app-plan-card {
         min-height: 0;
       }
@@ -2636,6 +2819,11 @@
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" type="image/jpeg" href="icon-r-rui.jpg" />
   <link rel="apple-touch-icon" href="icon-r-rui.jpg" />
+  <meta name="theme-color" content="#ea81a0" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="R.Rui" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -3414,11 +3602,11 @@
     }
 
     function renderAccounts() {
-      if (accountMode === "detail" && (!currentAccountId || !state.accounts.some(account => account.id === currentAccountId))) {
+      if (accountMode !== "list" && (!currentAccountId || !state.accounts.some(account => account.id === currentAccountId))) {
         accountMode = "list";
         currentAccountId = "";
       }
-      document.getElementById("accounts").innerHTML = accountMode === "detail" && currentAccountId
+      document.getElementById("accounts").innerHTML = accountMode !== "list" && currentAccountId
         ? renderSingleAccountWorkspace(state.accounts.find(account => account.id === currentAccountId))
         : renderAccountCardLibrary();
     }
@@ -3480,34 +3668,75 @@
     function renderSingleAccountWorkspace(account) {
       if (!account) return renderAccountCardLibrary();
       const counts = accountModuleCounts(account.id);
+      if (accountMode !== "module") {
+        return renderAccountAppHome(account, counts);
+      }
+      const meta = accountSubMeta(accountSubPage);
       return `
-        <div class="account-workspace-hero">
-          <div>
-            <button class="btn btn-sm" data-back-accounts type="button" style="margin-bottom:12px">返回账号卡片</button>
-            <h3>${escapeHtml(account.name)}</h3>
-            <p style="color:var(--text-secondary);line-height:1.8">${escapeHtml(account.positioning || "这个账号还没有填写定位。")}</p>
-            <div class="tags">
-              <span class="tag tag-info">更新平台：${escapeHtml(account.platform || "未填写")}</span>
-              <span class="tag">目标人群：${escapeHtml(account.audience || "未填写")}</span>
+        <div class="account-module-page">
+          <div class="account-module-topbar">
+            <button class="btn btn-sm" data-back-account-home type="button">← 工作台</button>
+            <div class="account-module-title">
+              <h3>${escapeHtml(meta.label)}</h3>
+              <p>${escapeHtml(account.name)} · ${escapeHtml(meta.desc)}</p>
             </div>
+            <button class="btn btn-sm" data-edit-account="${account.id}" type="button">账号资料</button>
           </div>
-          <button class="btn" data-edit-account="${account.id}" type="button">编辑账号资料</button>
-        </div>
-        <div class="account-workspace-shell">
-          <aside class="account-mini-nav">
-            <div class="account-mini-profile">
-              <h3>${escapeHtml(account.name)}</h3>
-              <p style="color:var(--text-secondary);font-size:12px">单账号工作台</p>
-            </div>
-            ${accountSubButton("plans", "内容安排", counts.plans)}
-            ${accountSubButton("themes", "灵感主题", counts.themes)}
-            ${accountSubButton("collabs", "接广对接", counts.collabs)}
-            ${accountSubButton("analytics", "数据复盘", counts.analytics)}
-            ${accountSubButton("reports", "平台日报", counts.reports)}
-          </aside>
-          <div>${renderAccountSubModule(account)}</div>
+          ${renderAccountSubModule(account)}
         </div>
       `;
+    }
+
+    function renderAccountAppHome(account, counts) {
+      return `
+        <div class="account-app-home">
+          <div class="account-workspace-hero">
+            <div>
+              <button class="btn btn-sm" data-back-accounts type="button" style="margin-bottom:12px">← 返回账号卡片</button>
+              <h3>${escapeHtml(account.name)}</h3>
+              <p style="color:var(--text-secondary);line-height:1.8">${escapeHtml(account.positioning || "这个账号还没有填写定位。")}</p>
+              <div class="tags">
+                <span class="tag tag-info">更新平台：${escapeHtml(account.platform || "未填写")}</span>
+                <span class="tag">目标人群：${escapeHtml(account.audience || "未填写")}</span>
+              </div>
+            </div>
+            <button class="btn" data-edit-account="${account.id}" type="button">编辑资料</button>
+          </div>
+          <div class="account-app-grid">
+            ${accountModuleEntryCard("plans", "内容安排", "拍摄、发布、复盘任务", counts.plans, "plan")}
+            ${accountModuleEntryCard("themes", "灵感主题", "主题和标题库", counts.themes, "idea")}
+            ${accountModuleEntryCard("collabs", "接广对接", "报价、授权和交付", counts.collabs, "brand")}
+            ${accountModuleEntryCard("analytics", "数据复盘", "浏览、收藏和涨粉", counts.analytics, "data")}
+            ${accountModuleEntryCard("reports", "平台日报", "日报摘录和动作", counts.reports, "daily")}
+          </div>
+        </div>
+      `;
+    }
+
+    function accountModuleEntryCard(id, label, desc, count, icon) {
+      return `
+        <button class="account-app-card" data-account-sub="${id}" type="button">
+          <div class="account-app-card-top">
+            <span class="account-app-icon">${appIcon(icon)}</span>
+            <span class="account-sub-count">${count}</span>
+          </div>
+          <div>
+            <h4>${label}</h4>
+            <p>${desc}</p>
+          </div>
+        </button>
+      `;
+    }
+
+    function accountSubMeta(id) {
+      const map = {
+        plans: { label: "内容安排", desc: "只看并管理这个账号的内容任务" },
+        themes: { label: "灵感主题", desc: "按主题收纳这个账号的标题" },
+        collabs: { label: "接广对接", desc: "推进这个账号的合作进度" },
+        analytics: { label: "数据复盘", desc: "记录这个账号的数据表现" },
+        reports: { label: "平台日报", desc: "保存对这个账号有用的日报" },
+      };
+      return map[id] || map.plans;
     }
 
     function accountSubButton(id, label, count) {
@@ -3534,16 +3763,16 @@
       return accountPlansModule(account);
     }
 
-    function miniModuleShell(title, desc, formHtml, listHtml) {
+    function miniModuleShell(title, desc, formHtml, listHtml, isEditing = false) {
       return `
-        <div class="card" style="margin-bottom:16px">
-          <div class="card-header"><h3>${title}</h3></div>
-          <div class="card-body"><p style="color:var(--text-secondary);line-height:1.8">${desc}</p></div>
+        <div class="account-record-card">
+          <div class="card-header" style="padding:0 0 10px"><h3>本账号记录</h3></div>
+          ${listHtml}
         </div>
-        <div class="mini-module-grid">
-          <div class="card"><div class="card-header"><h3>快速新增</h3></div><div class="card-body">${formHtml}</div></div>
-          <div class="card"><div class="card-header"><h3>本账号记录</h3></div><div class="card-body">${listHtml}</div></div>
-        </div>
+        <details class="account-add-panel" ${isEditing ? "open" : ""}>
+          <summary>${isEditing ? `编辑${title}` : `新增${title}`}</summary>
+          <div class="account-add-body">${formHtml}</div>
+        </details>
       `;
     }
 
@@ -3564,7 +3793,7 @@
           <div class="field field-full"><button class="btn btn-primary" type="submit">${isEditing ? "保存修改" : "保存到内容安排"}</button></div>
         </form>
       `;
-      return miniModuleShell("内容安排", "这里是外层「内容安排」的本账号 mini 版，新增和编辑都会同步到外层模块。", form, `<div class="list">${list.map(planCard).join("") || empty("暂无本账号内容安排。")}</div>`);
+      return miniModuleShell("内容安排", "只管理当前账号的内容任务，和外层内容安排同步。", form, `<div class="list">${list.map(planCard).join("") || empty("暂无本账号内容安排。")}</div>`, isEditing);
     }
 
     function accountThemesModule(account) {
@@ -3587,7 +3816,7 @@
           <div class="field field-full"><button class="btn btn-primary" type="submit">${isEditing ? "保存标题修改" : "批量保存标题"}</button></div>
         </form>
       `;
-      return miniModuleShell("灵感主题", "先建主题；以后点开同一个主题，就能直接在这个主题下继续写标题，不用重复输入主题名。", form, accountThemeGroups(ideas, account.id));
+      return miniModuleShell("灵感主题", "按主题管理当前账号标题，支持批量添加。", form, accountThemeGroups(ideas, account.id), isEditing);
     }
 
     function accountThemeGroups(ideas, accountId) {
@@ -3663,7 +3892,7 @@
           <div class="field field-full"><button class="btn btn-primary" type="submit">${isEditing ? "保存修改" : "保存到接广对接"}</button></div>
         </form>
       `;
-      return miniModuleShell("接广对接", "这里是外层「接广对接」的本账号 mini 版，方便只看这个账号的合作推进。", form, `<div class="list">${list.map(accountCollabItem).join("") || empty("暂无本账号接广。")}</div>`);
+      return miniModuleShell("接广对接", "只管理当前账号的品牌合作、报价和授权。", form, `<div class="list">${list.map(accountCollabItem).join("") || empty("暂无本账号接广。")}</div>`, isEditing);
     }
 
     function accountAnalyticsModule(account) {
@@ -3685,7 +3914,7 @@
           <div class="field field-full"><button class="btn btn-primary" type="submit">${isEditing ? "保存修改" : "保存到数据复盘"}</button></div>
         </form>
       `;
-      return growthDailyReport(list, `${account.name} 增长日报`) + miniModuleShell("数据复盘", "这里是外层「数据复盘」的本账号 mini 版，只展示当前账号数据。", form, `<div class="list">${list.map(item => analyticsItem(item, maxViews)).join("") || empty("暂无本账号复盘。")}</div>`);
+      return growthDailyReport(list, `${account.name} 增长日报`) + miniModuleShell("数据复盘", "只记录当前账号的数据表现。", form, `<div class="list">${list.map(item => analyticsItem(item, maxViews)).join("") || empty("暂无本账号复盘。")}</div>`, isEditing);
     }
 
     function accountReportsModule(account) {
@@ -3704,7 +3933,7 @@
           <div class="field field-full"><button class="btn btn-primary" type="submit">${isEditing ? "保存修改" : "保存到平台日报"}</button></div>
         </form>
       `;
-      return miniModuleShell("平台日报", "这里是外层「平台日报」的本账号 mini 版，用来沉淀只对这个账号有用的日报信息。", form, `<div class="list">${list.map(reportItem).join("") || empty("暂无本账号日报。")}</div>`);
+      return miniModuleShell("平台日报", "保存和当前账号有关的平台日报。", form, `<div class="list">${list.map(reportItem).join("") || empty("暂无本账号日报。")}</div>`, isEditing);
     }
 
     function editMiniBanner(text, key) {
@@ -4528,11 +4757,12 @@
       const enterAccountBtn = event.target.closest("[data-enter-account]");
       if (enterAccountBtn) {
         currentAccountId = enterAccountBtn.dataset.enterAccount;
-        accountMode = "detail";
+        accountMode = "home";
         accountSubPage = "plans";
         editing.account = null;
         setPage("accounts");
         renderAccounts();
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
       const backAccountsBtn = event.target.closest("[data-back-accounts]");
@@ -4540,12 +4770,23 @@
         accountMode = "list";
         editing.account = null;
         renderAccounts();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      const backAccountHomeBtn = event.target.closest("[data-back-account-home]");
+      if (backAccountHomeBtn) {
+        accountMode = "home";
+        Object.keys(editing).forEach(k => { if (k !== "account") editing[k] = null; });
+        renderAccounts();
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
       const accountSubBtn = event.target.closest("[data-account-sub]");
       if (accountSubBtn) {
         accountSubPage = accountSubBtn.dataset.accountSub;
+        accountMode = "module";
         renderAccounts();
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
 
       const scrollAccountFormBtn = event.target.closest("[data-scroll-account-form]");
@@ -4591,7 +4832,7 @@
           editing[key] = item.id;
           if (item.accountId && state.accounts.some(account => account.id === item.accountId)) {
             currentAccountId = item.accountId;
-            accountMode = "detail";
+            accountMode = "module";
             accountSubPage = subMap[type] || accountSubPage;
             setPage("accounts");
             renderAccounts();
