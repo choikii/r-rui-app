@@ -1,10 +1,10 @@
-const CACHE_NAME = "r-rui-workbench-v4";
+const CACHE_NAME = "r-rui-workbench-v6";
 const APP_ASSETS = [
-  "./",
-  "./index.html",
-  "./manifest.webmanifest",
-  "./supabase-config.js",
-  "./icon-r-rui.jpg"
+  "/r-rui-app/",
+  "/r-rui-app/index.html",
+  "/r-rui-app/manifest.webmanifest",
+  "/r-rui-app/supabase-config.js",
+  "/r-rui-app/icon-r-rui.jpg"
 ];
 
 self.addEventListener("install", (event) => {
@@ -31,10 +31,10 @@ self.addEventListener("fetch", (event) => {
       fetch(event.request)
         .then((response) => {
           const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put("./index.html", copy));
+          caches.open(CACHE_NAME).then((cache) => cache.put("/r-rui-app/index.html", copy));
           return response;
         })
-        .catch(() => caches.match("./index.html"))
+        .catch(() => caches.match("/r-rui-app/index.html"))
     );
     return;
   }
@@ -48,7 +48,7 @@ self.addEventListener("fetch", (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
           return response;
         })
-        .catch(() => caches.match("./index.html"));
+        .catch(() => caches.match("/r-rui-app/index.html"));
     })
   );
 });

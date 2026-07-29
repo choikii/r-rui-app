@@ -1742,6 +1742,450 @@
       line-height: 1.6;
     }
 
+
+
+    /* App 精修：把网页感压成手机工作台 */
+    .avatar-settings {
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.58);
+    }
+
+    .compact-section-title {
+      margin: 14px 2px 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-secondary);
+    }
+
+    .app-agenda-widget {
+      border-radius: 22px;
+      padding: 12px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.86), var(--brand-light));
+      box-shadow: 0 10px 24px rgba(88, 55, 41, 0.07);
+      margin-bottom: 12px;
+    }
+
+    .mini-cal-strip {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .mini-cal-day {
+      border: 0;
+      border-radius: 15px;
+      min-height: 54px;
+      background: rgba(255,255,255,0.72);
+      color: var(--text-secondary);
+      display: grid;
+      place-items: center;
+      gap: 1px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .mini-cal-day.active {
+      background: var(--text);
+      color: #fff;
+    }
+
+    .mini-cal-day span {
+      font-size: 10px;
+    }
+
+    .mini-cal-day strong {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .mini-cal-day i {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--brand);
+      position: absolute;
+      bottom: 7px;
+    }
+
+    .quick-todo-form {
+      display: grid;
+      grid-template-columns: 1fr 108px 42px;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .quick-todo-form input {
+      min-width: 0;
+      border: 0;
+      border-radius: 14px;
+      padding: 10px 11px;
+      background: rgba(255,255,255,0.82);
+      font-size: 12px;
+    }
+
+    .quick-todo-list {
+      display: grid;
+      gap: 6px;
+    }
+
+    .todo-mini-item {
+      display: grid;
+      grid-template-columns: 20px 1fr auto;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 9px;
+      border-radius: 13px;
+      background: rgba(255,255,255,0.62);
+      font-size: 12px;
+    }
+
+    .todo-mini-item small {
+      color: var(--text-tertiary);
+      font-size: 10px;
+    }
+
+    .app-task-list,
+    .plan-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 10px;
+    }
+
+    .task-icon-card {
+      display: grid;
+      grid-template-columns: 38px 1fr auto;
+      gap: 10px;
+      align-items: center;
+      border-radius: 18px;
+      padding: 10px;
+      background: rgba(255,255,255,0.86);
+      box-shadow: 0 8px 18px rgba(88, 55, 41, 0.055);
+    }
+
+    .task-mini-icon,
+    .app-plan-card .plan-date {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: var(--purple-light);
+      color: var(--purple-hover);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .task-icon-card strong {
+      display: block;
+      font-size: 12px;
+      line-height: 1.35;
+      color: var(--text);
+    }
+
+    .task-icon-card span {
+      display: block;
+      font-size: 10px;
+      color: var(--text-tertiary);
+      margin-top: 2px;
+    }
+
+    .task-icon-card em {
+      border-radius: 999px;
+      padding: 3px 7px;
+      font-style: normal;
+      font-size: 10px;
+      white-space: nowrap;
+      background: var(--brand-light);
+      color: var(--brand-hover);
+    }
+
+    .app-form-drawer {
+      margin-bottom: 12px;
+    }
+
+    .app-form-drawer > summary {
+      list-style: none;
+      cursor: pointer;
+      border-radius: 18px;
+      padding: 12px 14px;
+      background: var(--text);
+      color: #fff;
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .app-form-drawer > summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .compact-head {
+      padding: 10px 12px !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .compact-head h3 {
+      font-size: 15px;
+    }
+
+    .account-card-grid {
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 10px;
+    }
+
+    .account-entry-card {
+      min-height: 0 !important;
+      padding: 12px !important;
+      border-radius: 18px !important;
+    }
+
+    .account-entry-title h3 {
+      font-size: 14px !important;
+      line-height: 1.3;
+    }
+
+    .account-entry-text {
+      -webkit-line-clamp: 2 !important;
+      font-size: 11px !important;
+      line-height: 1.45 !important;
+    }
+
+    .mini-count-row {
+      display: flex;
+      gap: 6px;
+      margin-top: 9px;
+      flex-wrap: wrap;
+    }
+
+    .mini-count-row span {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--brand-light);
+      color: var(--brand-hover);
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .account-action-row {
+      gap: 6px !important;
+      margin-top: 10px !important;
+    }
+
+    .account-action-row .btn {
+      padding: 5px 8px;
+      min-height: 28px;
+      font-size: 11px;
+    }
+
+    .app-plan-card {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 10px;
+      align-items: start;
+      border: 0 !important;
+      border-radius: 18px !important;
+      padding: 11px !important;
+      background: rgba(255,255,255,0.88) !important;
+      box-shadow: 0 8px 18px rgba(88, 55, 41, 0.055);
+    }
+
+    .app-plan-card .plan-date {
+      flex-direction: column;
+      color: var(--purple-hover);
+      font-size: 9px;
+      line-height: 1;
+    }
+
+    .app-plan-card .plan-date-day {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .app-plan-card .plan-title {
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .app-plan-card .plan-meta,
+    .app-plan-card .plan-note {
+      font-size: 10px;
+      line-height: 1.45;
+      color: var(--text-tertiary);
+      margin-top: 2px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .app-plan-card .list-item-actions {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+
+    .settings-shell {
+      display: grid;
+      gap: 12px;
+      max-width: 760px;
+    }
+
+    .settings-profile-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-radius: 24px;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--brand-light), var(--purple-light));
+      box-shadow: 0 10px 24px rgba(88, 55, 41, 0.07);
+    }
+
+    .settings-profile-card img {
+      width: 56px;
+      height: 56px;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+
+    .settings-profile-card h3 {
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .settings-profile-card p {
+      color: var(--text-secondary);
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .settings-cloud {
+      width: 100%;
+      max-width: none;
+    }
+
+    .theme-picker {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+    }
+
+    .theme-choice {
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 10px;
+      background: rgba(255,255,255,0.82);
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .theme-choice.active {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px var(--brand-light);
+    }
+
+    .theme-swatch {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      height: 30px;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 8px;
+    }
+
+    .theme-choice strong {
+      font-size: 12px;
+      color: var(--text);
+    }
+
+    @media (max-width: 768px) {
+      .main-header {
+        min-height: 42px;
+        padding-top: calc(6px + env(safe-area-inset-top));
+      }
+
+      .header-actions {
+        margin-left: auto;
+      }
+
+      .header-actions .btn {
+        min-height: 28px;
+        border-radius: 12px;
+        padding: 5px 9px;
+      }
+
+      #dashboard .app-module-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #dashboard .app-module-card {
+        min-height: 78px;
+        padding: 10px;
+        border-radius: 18px;
+      }
+
+      #dashboard .app-module-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 13px;
+      }
+
+      .app-stat-row .stat-card {
+        min-height: 86px;
+        padding: 11px;
+        border-radius: 18px;
+      }
+
+      .app-stat-row .stat-desc {
+        display: none;
+      }
+
+      .stat-value {
+        font-size: 20px;
+      }
+
+      .mini-cal-strip {
+        grid-template-columns: repeat(7, 1fr);
+      }
+
+      .quick-todo-form {
+        grid-template-columns: 1fr 38px;
+      }
+
+      .quick-todo-form input[type="date"] {
+        display: none;
+      }
+
+      .account-card-grid,
+      .app-task-list,
+      .plan-mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .module-hero-card {
+        display: none !important;
+      }
+
+      .account-library-head p,
+      .growth-skill-panel > p {
+        display: none;
+      }
+
+      .card-header {
+        padding-top: 12px;
+      }
+
+      .card-header h3 {
+        font-size: 13px;
+      }
+    }
+
     /* 响应式 */
     @media (max-width: 1024px) {
       .grid-cols-2, .grid-cols-3, .grid-cols-4,
@@ -2131,6 +2575,63 @@
         min-height: 38px;
       }
     }
+
+    /* 最终手机覆盖：避免旧响应式样式把小组件放大 */
+    @media (max-width: 768px) {
+      .module-hero-card {
+        display: none !important;
+      }
+
+      .settings-cloud {
+        width: 100% !important;
+        max-width: none !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 8px;
+        border: 1px solid var(--border-light);
+        background: rgba(255,255,255,0.7);
+      }
+
+      .settings-cloud .cloud-status {
+        grid-column: 1 / -1;
+        max-width: none;
+        width: 100%;
+      }
+
+      .settings-cloud input,
+      .settings-cloud .btn {
+        width: 100% !important;
+        min-height: 34px;
+      }
+
+      .app-task-list,
+      .plan-mini-grid,
+      .account-card-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .app-plan-card {
+        min-height: 0;
+      }
+
+      .app-plan-card .list-item-actions {
+        align-items: center;
+      }
+
+      .account-library-head,
+      .account-workspace-hero,
+      .growth-skill-panel {
+        padding: 12px !important;
+        min-height: 0;
+      }
+
+      .account-workspace-hero p,
+      .account-mini-profile p,
+      .mini-module-grid .card:first-child .card-header + .card-body > p {
+        display: none;
+      }
+    }
   </style>
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="icon" type="image/jpeg" href="icon-r-rui.jpg" />
@@ -2146,9 +2647,9 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="logo">
-          <div class="logo-icon" style="background:linear-gradient(135deg,var(--brand-light),var(--purple-light));color:var(--brand-hover);box-shadow:none;border:1px solid var(--border-light);">
+          <button class="logo-icon avatar-settings" data-page="settings" type="button" title="打开设置" style="background:linear-gradient(135deg,var(--brand-light),var(--purple-light));color:var(--brand-hover);box-shadow:none;border:1px solid var(--border-light);">
             <img src="icon-r-rui.jpg" alt="R.Rui" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" />
-          </div>
+          </button>
           <div class="logo-text">
             <h1>R.Rui</h1>
             <p>创作者工作台</p>
@@ -2168,9 +2669,8 @@
           <p id="pageDesc">今天该做什么、哪些账号需要补灵感、接广推进到哪一步，一眼看清。</p>
         </div>
         <div class="header-actions">
-          <div class="cloud-panel" id="cloudPanel"></div>
-          <button class="btn" id="exportBtn">导出备份</button>
-          <button class="btn btn-primary" data-jump="inspirations">记录新灵感</button>
+          <button class="btn btn-ghost" data-jump="settings" type="button">设置</button>
+          <button class="btn btn-primary" data-jump="inspirations" type="button">新灵感</button>
         </div>
       </header>
 
@@ -2183,7 +2683,7 @@
         <section class="section" id="collabs"></section>
         <section class="section" id="analytics"></section>
         <section class="section" id="reports"></section>
-        <section class="section" id="backup"></section>
+        <section class="section" id="settings"></section>
       </div>
     </main>
   </div>
@@ -2215,7 +2715,7 @@
       ["collabs", "接广对接", "brand"],
       ["analytics", "数据复盘", "data"],
       ["reports", "平台日报", "daily"],
-      ["backup", "备份", "backup"],
+      ["settings", "设置", "settings"],
     ];
 
     const pageMeta = {
@@ -2226,8 +2726,8 @@
       plans: ["内容安排", "把选题变成可执行的拍摄、剪辑、发布和复盘安排。"],
       collabs: ["接广对接", "记录品牌、报价、合作状态、截止日期和对接备注，减少遗漏。"],
       analytics: ["数据复盘", "录入每条或每阶段数据，观察阅读、互动、收藏和涨粉趋势。"],
-      reports: ["平台日报", "放置你另一个任务里的平台日报摘要，方便和内容安排联动。"],
-      backup: ["备份", "导出、导入或重置本地数据。"],
+      reports: ["平台日报", "日报摘要和选题动作。"],
+      settings: ["设置", "云同步、备份和外观。"],
     };
 
     function uid() {
@@ -2509,6 +3009,7 @@
       const client = initSupabaseClient();
       if (!client) {
         renderCloudPanel();
+        if (currentPage === "settings") renderSettings();
         return;
       }
       const { data } = await client.auth.getSession();
@@ -2516,6 +3017,7 @@
       cloudStatus = cloudUser ? "已登录，准备同步" : "云同步未登录";
       if (cloudUser) await loadStateFromCloud();
       renderCloudPanel();
+      if (currentPage === "settings") renderSettings();
     }
 
     async function handleCloudAuth(mode) {
@@ -2532,6 +3034,7 @@
       }
       cloudStatus = mode === "signup" ? "正在注册..." : "正在登录...";
       renderCloudPanel();
+      if (currentPage === "settings") renderSettings();
       const result = mode === "signup"
         ? await client.auth.signUp({ email, password })
         : await client.auth.signInWithPassword({ email, password });
@@ -2539,6 +3042,7 @@
         console.error(result.error);
         cloudStatus = result.error.message || "登录失败";
         renderCloudPanel();
+        if (currentPage === "settings") renderSettings();
         toast("云同步登录失败，请检查邮箱、密码或 Supabase 配置");
         return;
       }
@@ -2546,6 +3050,7 @@
       if (!cloudUser) {
         cloudStatus = "已注册，请去邮箱确认后再登录";
         renderCloudPanel();
+        if (currentPage === "settings") renderSettings();
         toast("请先确认邮箱，再回到这里登录");
         return;
       }
@@ -2559,6 +3064,7 @@
       cloudUser = null;
       cloudStatus = "已退出云同步，本机数据仍保留";
       renderCloudPanel();
+      if (currentPage === "settings") renderSettings();
       toast("已退出登录");
     }
 
@@ -2631,6 +3137,7 @@
         data: '<svg viewBox="0 0 24 24"><path d="M5 19V9"/><path d="M12 19V5"/><path d="M19 19v-7"/><path d="M4 19h16"/></svg>',
         daily: '<svg viewBox="0 0 24 24"><path d="M6 4.5h9l3 3V19.5H6z"/><path d="M15 4.5v3h3"/><path d="M9 11h6M9 14h6M9 17h4"/></svg>',
         backup: '<svg viewBox="0 0 24 24"><path d="M7 17.5A4.5 4.5 0 0 1 7.6 9a5.5 5.5 0 0 1 10.6 1.5A3.5 3.5 0 0 1 18 17.5H7Z"/><path d="M12 12v6"/><path d="m9.5 15.5 2.5 2.5 2.5-2.5"/></svg>',
+        settings: '<svg viewBox="0 0 24 24"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2 3.4-.2-.1a1.8 1.8 0 0 0-2 .1 8.6 8.6 0 0 1-1.7.7 1.8 1.8 0 0 0-1.2 1.5v.2H9.3v-.2A1.8 1.8 0 0 0 8.1 21a8.6 8.6 0 0 1-1.7-.7 1.8 1.8 0 0 0-2-.1l-.2.1-2-3.4.1-.1A1.7 1.7 0 0 0 2.6 15a7.5 7.5 0 0 1 0-2 1.7 1.7 0 0 0-.3-1.9l-.1-.1 2-3.4.2.1a1.8 1.8 0 0 0 2-.1A8.6 8.6 0 0 1 8.1 7a1.8 1.8 0 0 0 1.2-1.5v-.2h5.4v.2A1.8 1.8 0 0 0 15.9 7a8.6 8.6 0 0 1 1.7.7 1.8 1.8 0 0 0 2 .1l.2-.1 2 3.4-.1.1a1.7 1.7 0 0 0-.3 1.9 7.5 7.5 0 0 1 0 2Z"/></svg>',
         check: '<svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></svg>',
       };
       return `<span class="line-icon">${icons[name] || icons.dashboard}</span>`;
@@ -2681,11 +3188,8 @@
             <h3>🎀 R.Rui 工作台</h3>
             <p>账号、灵感、安排、接广和复盘都从这里进入。<br><strong style="color:#cf6d9a">少滑动，先做今天最重要的事。</strong></p>
           </div>
-          <div class="pink-quote-card">
-            <span>每日工作提示</span>
-            <strong>先选账号，再进模块；灵感和接广都按账号归档。</strong>
-          </div>
-          <div class="grid grid-cols-3">
+          ${appAgendaWidget()}
+          <div class="grid grid-cols-3 app-stat-row">
             ${statCard("今日安排", state.plans.filter(p => p.date === today()).length, "今天需要处理", appIcon("plan"), "plans")}
             ${statCard("待办", (state.todos || []).filter(t => t.status !== "完成").length, "未完成任务", appIcon("check"), "dashboard")}
             ${statCard("接广", activeCollabs, "进行中合作", appIcon("brand"), "collabs")}
@@ -2697,48 +3201,72 @@
             ${appModuleCard("plan", "内容安排", `${upcoming.length} 条近期安排`, "plans")}
             ${appModuleCard("brand", "接广对接", `${activeCollabs} 个合作推进中`, "collabs")}
             ${appModuleCard("data", "数据复盘", `${totalViews.toLocaleString("zh-CN")} 浏览已录入`, "analytics")}
-            ${appModuleCard("daily", "平台日报", "同步日报与选题动作", "reports")}
-            ${appModuleCard("backup", "备份同步", "导出备份 / 云端配置", "backup")}
+            ${appModuleCard("daily", "平台日报", "日报与动作", "reports")}
+            ${appModuleCard("settings", "设置", "登录 / 配色 / 备份", "settings")}
           </div>
         </div>
-        ${calendarBoard()}
-        <div class="grid grid-cols-4">
-          ${statCard("账号", state.accounts.length, "进入账号库，按账号开始工作", "🏠", "accounts")}
-          ${statCard("可拍摄灵感", readyIdeas, "进入灵感库，整理可执行选题", "💡", "inspirations")}
-          ${statCard("进行中接广", activeCollabs, "进入接广对接，推进合作", "🤝", "collabs")}
-          ${statCard("今日安排", state.plans.filter(p => p.date === today()).length, "进入内容安排，处理今日任务", "📅", "plans")}
+        <div class="compact-section-title">近期任务</div>
+        <div class="app-task-list">
+          ${upcoming.length ? upcoming.map(planMiniCard).join("") : empty("还没有内容安排。")}
         </div>
-        <div class="grid grid-cols-2" style="margin-top:20px">
-          <div class="card">
-            <div class="card-header"><h3>近期内容安排</h3></div>
-            <div class="card-body">
-              <div class="list">
-                ${upcoming.length ? upcoming.map(planItem).join("") : empty("还没有内容安排，可以先添加拍摄或发布计划。")}
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header"><h3>高分灵感</h3></div>
-            <div class="card-body">
-              <div class="list">
-                ${hotIdeas.length ? hotIdeas.map(ideaItem).join("") : empty("还没有灵感，先记录对标账号或爆款笔记。")}
-              </div>
-            </div>
+        <div class="compact-section-title">高分灵感</div>
+        <div class="app-task-list">
+          ${hotIdeas.length ? hotIdeas.map(ideaMiniCard).join("") : empty("还没有灵感。")}
+        </div>
+      `;
+    }
+
+
+    function appAgendaWidget() {
+      const activeTodos = (state.todos || []).filter(item => item.status !== "完成").sort((a, b) => a.date.localeCompare(b.date)).slice(0, 4);
+      const days = Array.from({ length: 7 }, (_, index) => {
+        const date = new Date();
+        date.setDate(date.getDate() + index);
+        const dateText = date.toISOString().slice(0, 10);
+        const hasWork = state.plans.some(item => item.date === dateText) || activeTodos.some(item => item.date === dateText);
+        return `<button class="mini-cal-day ${index === 0 ? "active" : ""}" data-jump="plans" type="button"><span>${index === 0 ? "今" : date.getMonth() + 1 + "/" + date.getDate()}</span><strong>${date.getDate()}</strong>${hasWork ? "<i></i>" : ""}</button>`;
+      }).join("");
+      return `
+        <div class="app-agenda-widget">
+          <div class="mini-cal-strip">${days}</div>
+          <form data-form="todo" class="quick-todo-form">
+            <input name="title" type="text" lang="zh-CN" inputmode="text" placeholder="今天要做什么" required />
+            <input name="date" type="date" value="${today()}" />
+            <button class="btn btn-primary" type="submit">加</button>
+          </form>
+          <div class="quick-todo-list">
+            ${activeTodos.length ? activeTodos.map(todoMiniItem).join("") : `<span class="soft-empty">今天先加一件小事</span>`}
           </div>
         </div>
-        <div class="grid grid-cols-2" style="margin-top:20px">
-          <div class="card stat-card">
-            <div class="stat-icon" style="background:var(--info-bg);color:var(--info)">👁</div>
-            <div class="stat-label">已录入浏览量</div>
-            <div class="stat-value">${totalViews.toLocaleString("zh-CN")}</div>
-            <div class="stat-desc">来自数据复盘模块，适合用来观察账号阶段增长。</div>
+      `;
+    }
+
+    function todoMiniItem(item) {
+      return `<div class="todo-mini-item"><button class="todo-check ${item.status === "完成" ? "done" : ""}" data-toggle-todo="${item.id}" aria-label="完成待办"></button><span>${escapeHtml(item.title)}</span><small>${escapeHtml(item.date)}</small></div>`;
+    }
+
+    function planMiniCard(item) {
+      return `
+        <div class="task-icon-card">
+          <div class="task-mini-icon">${appIcon("plan")}</div>
+          <div>
+            <strong>${escapeHtml(item.title)}</strong>
+            <span>${escapeHtml(item.date)} · ${escapeHtml(accountName(item.accountId))} · ${escapeHtml(item.type)}</span>
           </div>
-          <div class="card stat-card">
-            <div class="stat-icon" style="background:var(--success-bg);color:var(--success)">⭐</div>
-            <div class="stat-label">已录入收藏量</div>
-            <div class="stat-value">${totalSaves.toLocaleString("zh-CN")}</div>
-            <div class="stat-desc">收藏量通常能反映选题是否有长期参考价值。</div>
+          <em class="${statusClass(item.status)}">${escapeHtml(item.status)}</em>
+        </div>
+      `;
+    }
+
+    function ideaMiniCard(item) {
+      return `
+        <div class="task-icon-card">
+          <div class="task-mini-icon">${appIcon("idea")}</div>
+          <div>
+            <strong>${escapeHtml(item.title)}</strong>
+            <span>${escapeHtml(item.topic || "未分类主题")} · ${escapeHtml(accountName(item.accountId))}</span>
           </div>
+          <em class="${statusClass(item.status)}">${escapeHtml(item.status || "待细化")}</em>
         </div>
       `;
     }
@@ -2899,13 +3427,9 @@
       const current = state.accounts.find(account => account.id === editing.account) || {};
       const isEditing = Boolean(editing.account);
       return `
-        ${moduleHero("account", "账号库", "每个账号都有自己的内容、灵感、接广和复盘工作台", `${state.accounts.length} 个账号`)}
-        <div class="account-library-head">
-          <div>
-            <h3>账号库</h3>
-            <p style="color:var(--text-secondary);line-height:1.8">这里先看全部账号卡片。每张卡片展示定位、目标人群、待办提醒和更新平台；点击卡片进入该账号自己的工作台。</p>
-          </div>
-          <button class="btn btn-primary" data-scroll-account-form type="button">${isEditing ? "正在编辑账号" : "新增账号卡"}</button>
+        <div class="account-library-head compact-head">
+          <h3>账号库</h3>
+          <button class="btn btn-primary" data-scroll-account-form type="button">${isEditing ? "编辑中" : "新增"}</button>
         </div>
         <div class="account-card-grid">
           ${state.accounts.map(accountEntryCard).join("") || `<div class="workspace-empty">还没有账号卡。先在下方新增一个账号。</div>`}
@@ -2940,22 +3464,14 @@
             <h3>${escapeHtml(account.name)}</h3>
             <span class="tag tag-info">${escapeHtml(account.platform || "未填平台")}</span>
           </div>
-          <div class="account-entry-section">
-            <div class="account-entry-label">账号定位</div>
-            <div class="account-entry-text">${escapeHtml(account.positioning || "还没有填写定位。")}</div>
-          </div>
-          <div class="account-entry-section">
-            <div class="account-entry-label">目标人群</div>
-            <div class="account-entry-text">${escapeHtml(account.audience || "还没有填写目标人群。")}</div>
-          </div>
-          <div class="tags" style="margin-top:auto">
-            <span class="account-reminder">待办提醒 ${reminders}</span>
-            <span class="tag tag-brand">灵感 ${ideas}</span>
+          <div class="account-entry-text">${escapeHtml(account.positioning || "还没有填写定位。")}</div>
+          <div class="mini-count-row">
+            <span>待办 ${reminders}</span><span>灵感 ${ideas}</span>
           </div>
           <div class="account-action-row">
             <button class="btn btn-sm" data-edit-account="${account.id}" type="button">编辑</button>
-            <button class="btn btn-sm" data-delete="accounts" data-id="${account.id}" type="button">删除</button>
-            <button class="btn btn-sm btn-primary" data-enter-account="${account.id}" type="button">进入工作台</button>
+            <button class="btn btn-sm" data-delete="accounts" data-id="${account.id}" type="button">删</button>
+            <button class="btn btn-sm btn-primary" data-enter-account="${account.id}" type="button">进入</button>
           </div>
         </div>
       `;
@@ -3446,11 +3962,10 @@
     function renderPlans() {
       const list = filtered(state.plans).sort((a, b) => a.date.localeCompare(b.date));
       document.getElementById("plans").innerHTML = `
-        ${moduleHero("plan", "内容安排", "把选题拆成拍摄、剪辑、发布和复盘计划", `${list.length} 条安排`)}
         ${filterBar()}
-        <div class="grid grid-cols-2">
+        <details class="app-form-drawer">
+          <summary>新增安排</summary>
           <div class="card">
-            <div class="card-header"><h3>新增安排</h3></div>
             <div class="card-body">
               <form data-form="plan" class="form-grid">
                 ${selectField("accountId", "账号", accountOptions())}
@@ -3464,14 +3979,10 @@
               </form>
             </div>
           </div>
-          <div class="card">
-            <div class="card-header"><h3>内容日程 (${list.length})</h3></div>
-            <div class="card-body">
-              <div class="list">
-                ${list.map(planCard).join("") || empty("还没有安排。")}
-              </div>
-            </div>
-          </div>
+        </details>
+        <div class="compact-section-title">内容日程 (${list.length})</div>
+        <div class="plan-mini-grid">
+          ${list.map(planCard).join("") || empty("还没有安排。")}
         </div>
       `;
     }
@@ -3481,19 +3992,19 @@
       const day = Number.isNaN(date.getTime()) ? "--" : String(date.getDate()).padStart(2, "0");
       const month = Number.isNaN(date.getTime()) ? item.date : `${date.getMonth() + 1}月`;
       return `
-        <div class="plan-card">
+        <div class="plan-card app-plan-card">
           <div class="plan-date">
             <div class="plan-date-day">${day}</div>
             <div class="plan-date-month">${month}</div>
           </div>
           <div class="plan-content">
             <div class="plan-title">${escapeHtml(item.title)}</div>
-            <div class="plan-meta">${escapeHtml(accountName(item.accountId))} · ${escapeHtml(item.type)} · 优先级 ${escapeHtml(item.priority)}</div>
-            <div class="plan-note">${escapeHtml(item.note)}</div>
+            <div class="plan-meta">${escapeHtml(accountName(item.accountId))} · ${escapeHtml(item.type)} · ${escapeHtml(item.priority || "中")}</div>
+            ${item.note ? `<div class="plan-note">${escapeHtml(item.note)}</div>` : ""}
           </div>
           <div class="list-item-actions">
             <span class="status ${statusClass(item.status)}">${escapeHtml(item.status)}</span>
-            <button class="btn btn-sm" data-edit-record="plans" data-id="${item.id}" type="button">编辑</button><button class="btn btn-sm" data-delete="plans" data-id="${item.id}">删除</button>
+            <button class="btn btn-sm" data-edit-record="plans" data-id="${item.id}" type="button">改</button><button class="btn btn-sm" data-delete="plans" data-id="${item.id}">删</button>
           </div>
         </div>
       `;
@@ -3698,6 +4209,99 @@
       `;
     }
 
+
+    const APP_THEMES = {
+      dreamPink: {
+        name: "梦幻粉奶油",
+        colors: ["#F4C9D0", "#F7EFDF", "#FFD2C0", "#E07D89"],
+        vars: {"--bg":"#fbf7ef","--sidebar-bg":"#fffaf2","--sidebar-text":"#987f76","--sidebar-active":"#2b2522","--sidebar-hover":"#f4ccd5","--panel":"#ffffff","--text":"#302421","--text-secondary":"#8c7169","--text-tertiary":"#b59b92","--border":"#eadbd2","--border-light":"#f7ebe5","--brand":"#ea81a0","--brand-light":"#f4ccd5","--brand-hover":"#d6698b","--purple":"#e07d89","--purple-light":"#ffd2c0","--purple-hover":"#b94f73","--success":"#98ba75","--success-bg":"#e8f1dc","--warning":"#eab59e","--warning-bg":"#faeadf","--danger":"#d76c86","--danger-bg":"#f9dbe3","--info":"#ea81a0","--info-bg":"#f4ccd5"}
+      },
+      lilacBlue: {
+        name: "雾紫蓝白",
+        colors: ["#EBE4F4", "#FFFFE8", "#D2F1F6", "#CBBFD8"],
+        vars: {"--bg":"#fffef1","--sidebar-bg":"#f8f2fb","--sidebar-text":"#857896","--sidebar-active":"#3a3342","--sidebar-hover":"#ebe4f4","--panel":"#ffffff","--text":"#342f3c","--text-secondary":"#7d708d","--text-tertiary":"#aaa0b8","--border":"#e8deef","--border-light":"#f3ecf7","--brand":"#c7b4de","--brand-light":"#ebe4f4","--brand-hover":"#9b86b6","--purple":"#d2f1f6","--purple-light":"#ecfbfd","--purple-hover":"#79b6c1","--success":"#91c8c7","--success-bg":"#e2f6f8","--warning":"#f2e8b8","--warning-bg":"#ffffe8","--danger":"#d88ca6","--danger-bg":"#f8dfe9","--info":"#8fc5d0","--info-bg":"#d2f1f6"}
+      },
+      mintPeach: {
+        name: "蜜桃薄荷",
+        colors: ["#FFDCBB", "#FFFADB", "#E3F0C7", "#A6CACB"],
+        vars: {"--bg":"#fffadb","--sidebar-bg":"#fff3e3","--sidebar-text":"#8c7b69","--sidebar-active":"#31342f","--sidebar-hover":"#ffdcbb","--panel":"#ffffff","--text":"#31342f","--text-secondary":"#79836d","--text-tertiary":"#a8ad94","--border":"#eadfc9","--border-light":"#fff1dc","--brand":"#a6cacb","--brand-light":"#dff1ee","--brand-hover":"#72aab0","--purple":"#e3f0c7","--purple-light":"#f1f8df","--purple-hover":"#91ae6b","--success":"#8fb681","--success-bg":"#e3f0c7","--warning":"#ffdcbb","--warning-bg":"#fff1dc","--danger":"#de8b8a","--danger-bg":"#ffe1dc","--info":"#a6cacb","--info-bg":"#dff1ee"}
+      },
+      pinkAqua: {
+        name: "粉蓝软糖",
+        colors: ["#EAC0C3", "#FAEDE5", "#C7E2E0", "#84B4C3"],
+        vars: {"--bg":"#faede5","--sidebar-bg":"#fff6f1","--sidebar-text":"#92777b","--sidebar-active":"#2d3032","--sidebar-hover":"#eac0c3","--panel":"#ffffff","--text":"#2d3032","--text-secondary":"#6f8489","--text-tertiary":"#9bb3b9","--border":"#ead6d2","--border-light":"#f7e7e3","--brand":"#84b4c3","--brand-light":"#c7e2e0","--brand-hover":"#6398a8","--purple":"#eac0c3","--purple-light":"#faede5","--purple-hover":"#c98290","--success":"#8cb9a4","--success-bg":"#e3f1e9","--warning":"#eabfa6","--warning-bg":"#faede5","--danger":"#d57587","--danger-bg":"#f5d4dc","--info":"#84b4c3","--info-bg":"#d8eef0"}
+      },
+      blushLilac: {
+        name: "腮红雾紫",
+        colors: ["#FFD4DB", "#FFF6DE", "#C7E2EA", "#B8AAC8"],
+        vars: {"--bg":"#fff6de","--sidebar-bg":"#fff3f5","--sidebar-text":"#88758d","--sidebar-active":"#352f3c","--sidebar-hover":"#ffd4db","--panel":"#ffffff","--text":"#352f3c","--text-secondary":"#7b7183","--text-tertiary":"#aaa0b1","--border":"#ead9df","--border-light":"#f8e9ee","--brand":"#b8aac8","--brand-light":"#efe6f3","--brand-hover":"#9482a7","--purple":"#c7e2ea","--purple-light":"#eaf7f9","--purple-hover":"#83aeb8","--success":"#93b9a8","--success-bg":"#e6f2ea","--warning":"#fff6de","--warning-bg":"#fff9e8","--danger":"#d77d98","--danger-bg":"#f8dce6","--info":"#b8aac8","--info-bg":"#efe6f3"}
+      }
+    };
+
+    function currentThemeName() {
+      return localStorage.getItem("rrui-theme") || "dreamPink";
+    }
+
+    function applyTheme(name = currentThemeName()) {
+      const theme = APP_THEMES[name] || APP_THEMES.dreamPink;
+      Object.entries(theme.vars).forEach(([key, value]) => document.documentElement.style.setProperty(key, value));
+      localStorage.setItem("rrui-theme", name);
+      document.querySelector('meta[name="theme-color"]')?.setAttribute("content", theme.vars["--brand"]);
+    }
+
+    function renderThemePicker() {
+      const active = currentThemeName();
+      return `<div class="theme-picker">${Object.entries(APP_THEMES).map(([key, theme]) => `
+        <button class="theme-choice ${active === key ? "active" : ""}" data-theme="${key}" type="button">
+          <span class="theme-swatch">${theme.colors.map(color => `<i style="background:${color}"></i>`).join("")}</span>
+          <strong>${theme.name}</strong>
+        </button>
+      `).join("")}</div>`;
+    }
+
+    function renderSettings() {
+      const json = JSON.stringify(state, null, 2);
+      const cloudHtml = (() => {
+        if (!isSupabaseConfigured()) {
+          return `<span class="cloud-status">本地模式：未配置云同步</span>`;
+        }
+        if (cloudUser) {
+          return `<span class="cloud-status">${escapeHtml(cloudStatus)} · ${escapeHtml(cloudUser.email || "已登录")}</span><button class="btn" data-cloud-sync type="button">立即同步</button><button class="btn" data-cloud-logout type="button">退出</button>`;
+        }
+        return `<span class="cloud-status">${escapeHtml(cloudStatus || "云同步未登录")}</span><input id="cloudEmail" type="email" placeholder="邮箱" autocomplete="email" /><input id="cloudPassword" type="password" placeholder="密码" autocomplete="current-password" /><button class="btn btn-primary" data-cloud-login type="button">登录</button><button class="btn" data-cloud-signup type="button">注册</button>`;
+      })();
+      document.getElementById("settings").innerHTML = `
+        <div class="settings-shell">
+          <div class="settings-profile-card">
+            <img src="icon-r-rui.jpg" alt="R.Rui" />
+            <div><h3>R.Rui</h3><p>${cloudUser ? escapeHtml(cloudUser.email || "已登录") : "未登录云同步"}</p></div>
+          </div>
+          <div class="card settings-card">
+            <div class="card-header"><h3>云同步登录</h3></div>
+            <div class="card-body"><div class="cloud-panel settings-cloud">${cloudHtml}</div></div>
+          </div>
+          <div class="card settings-card">
+            <div class="card-header"><h3>外观配色</h3></div>
+            <div class="card-body">${renderThemePicker()}</div>
+          </div>
+          <details class="app-form-drawer">
+            <summary>备份与恢复</summary>
+            <div class="card settings-card">
+              <div class="card-body">
+                <button class="btn btn-primary" id="downloadJson" type="button">下载备份</button>
+                <textarea class="backup-textarea" readonly>${escapeHtml(json)}</textarea>
+                <textarea id="importBox" placeholder="粘贴 JSON 备份"></textarea>
+                <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+                  <button class="btn" id="importJson" type="button">导入备份</button>
+                  <button class="btn btn-danger" id="resetData" type="button">重置示例</button>
+                </div>
+              </div>
+            </div>
+          </details>
+        </div>
+      `;
+    }
+
     function renderBackup() {
       const json = JSON.stringify(state, null, 2);
       document.getElementById("backup").innerHTML = `
@@ -3867,7 +4471,7 @@
         renderCollabs();
         renderAnalytics();
         renderReports();
-        renderBackup();
+        renderSettings();
         setPage(currentPage);
       } catch (error) {
         console.error(error);
@@ -3900,6 +4504,14 @@
 
       const pageBtn = event.target.closest("[data-page]");
       if (pageBtn) setPage(pageBtn.dataset.page);
+
+      const themeBtn = event.target.closest("[data-theme]");
+      if (themeBtn) {
+        applyTheme(themeBtn.dataset.theme);
+        renderSettings();
+        toast("已切换配色");
+        return;
+      }
 
       const jumpBtn = event.target.closest("[data-jump]");
       if (jumpBtn) setPage(jumpBtn.dataset.jump);
@@ -4136,6 +4748,7 @@
       }
     });
 
+    applyTheme();
     render();
     refreshCloudSession();
 
