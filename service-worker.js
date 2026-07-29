@@ -1,4 +1,4 @@
-const CACHE_NAME = "r-rui-workbench-v7";
+const CACHE_NAME = "r-rui-workbench-v8";
 const APP_ASSETS = [
   "./",
   "./index.html",

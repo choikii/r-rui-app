@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta name="theme-color" content="#ea81a0" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="R.Rui" />
@@ -56,6 +56,9 @@
     html {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+      height: 100%;
+      overflow: hidden;
+      touch-action: manipulation;
     }
 
     body {
@@ -65,16 +68,144 @@
       line-height: 1.6;
       color: var(--text);
       background: var(--bg);
+      width: 100%;
+      height: 100%;
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow: hidden;
+      overscroll-behavior: none;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    @media (min-width: 769px) {
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background:
+          radial-gradient(circle at 20% 10%, rgba(244, 204, 213, 0.42), transparent 30%),
+          radial-gradient(circle at 80% 30%, rgba(152, 186, 117, 0.26), transparent 32%),
+          #f2eadf;
+      }
+
+      .app {
+        width: 430px !important;
+        max-width: 430px !important;
+        height: min(100vh, 932px) !important;
+        height: min(100dvh, 932px) !important;
+        min-height: 0 !important;
+        position: relative !important;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 24px 70px rgba(88, 55, 41, 0.18);
+        background: var(--bg);
+      }
+
+      .sidebar {
+        width: 78px !important;
+        min-width: 78px !important;
+        height: 100% !important;
+        position: absolute !important;
+        border-right: 1px solid rgba(234, 181, 158, 0.35);
+        background: rgba(255, 250, 242, 0.94);
+      }
+
+      .sidebar-header {
+        padding: 16px 10px 8px;
+        border-bottom: none;
+      }
+
+      .logo {
+        justify-content: center;
+      }
+
+      .logo-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+      }
+
+      .logo-text,
+      .sidebar-footer,
+      .nav-badge {
+        display: none;
+      }
+
+      .nav {
+        padding: 8px 8px 18px;
+        gap: 8px;
+        overflow-y: auto;
+      }
+
+      .nav-btn {
+        flex-direction: column;
+        justify-content: center;
+        gap: 4px;
+        min-height: 58px;
+        padding: 8px 4px;
+        border-radius: 13px;
+      }
+
+      .nav-label {
+        display: block;
+        font-size: 10px;
+        line-height: 1.15;
+        white-space: normal;
+        text-align: center;
+      }
+
+      .main {
+        margin-left: 78px !important;
+        height: 100% !important;
+        min-height: 0 !important;
+      }
+
+      .main-header {
+        min-height: 52px;
+        padding: 8px 12px;
+      }
+
+      .page-info h2,
+      .page-info p,
+      .header-actions > .btn-primary {
+        display: none;
+      }
+
+      .content {
+        padding: 8px 12px 24px;
+      }
+
+      .module-hero-card {
+        display: none !important;
+      }
+
+      .grid-cols-2,
+      .grid-cols-3,
+      .grid-cols-4,
+      .hot-search-panel,
+      .growth-report-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .account-app-grid,
+      #dashboard .app-module-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card {
+        border: none;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.88);
+        box-shadow: 0 8px 22px rgba(88, 55, 41, 0.07);
+      }
     }
 
     /* 确保中文输入正常 */
     input, textarea, select, button {
       font-family: inherit;
-      font-size: inherit;
+      font-size: 16px;
       line-height: inherit;
       color: inherit;
+      touch-action: manipulation;
     }
 
     input, textarea, select {
@@ -98,7 +229,10 @@
     /* 布局 */
     .app {
       display: flex;
-      min-height: 100vh;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
     }
 
     /* 侧边栏 */
@@ -236,9 +370,12 @@
     .main {
       flex: 1;
       margin-left: 240px;
-      min-height: 100vh;
+      height: 100vh;
+      height: 100dvh;
       display: flex;
       flex-direction: column;
+      overflow: hidden;
+      min-width: 0;
     }
 
     .main-header {
@@ -375,6 +512,11 @@
     .content {
       padding: 32px 40px 48px;
       flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
     }
 
     .section {
@@ -531,6 +673,42 @@
       gap: 6px;
       align-items: flex-start;
       flex-shrink: 0;
+    }
+
+    .icon-actions {
+      display: inline-flex;
+      gap: 4px;
+      align-items: center;
+      opacity: 0.72;
+    }
+
+    .icon-action {
+      width: 28px;
+      height: 28px;
+      min-height: 28px;
+      border: none;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.78);
+      color: var(--text-tertiary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      font-size: 13px;
+      line-height: 1;
+      box-shadow: 0 2px 8px rgba(88, 55, 41, 0.06);
+    }
+
+    .icon-action:hover {
+      background: var(--brand-light);
+      color: var(--brand-hover);
+      transform: none;
+      box-shadow: none;
+    }
+
+    .icon-action.danger:hover {
+      background: var(--danger-bg);
+      color: var(--danger);
     }
 
     /* 标签 */
@@ -1613,6 +1791,83 @@
       border-radius: 22px;
       background: rgba(255,255,255,0.88);
       padding: 14px;
+    }
+
+    .theme-app-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .theme-app-card {
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 10% 8%, rgba(244, 204, 213, 0.72), transparent 34%),
+        rgba(255,255,255,0.9);
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      text-align: left;
+      cursor: pointer;
+      color: var(--text);
+      width: 100%;
+    }
+
+    .theme-app-card:active {
+      transform: scale(0.985);
+    }
+
+    .theme-app-card strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .theme-app-card span {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .theme-arrow {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      color: var(--brand-hover);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .theme-title-card {
+      position: relative;
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.9);
+      padding: 14px 44px 14px 14px;
+      margin-bottom: 9px;
+    }
+
+    .theme-title-index {
+      font-size: 11px;
+      color: var(--brand-hover);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .theme-title-actions {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .theme-add-current {
+      margin-top: 12px;
+      border-radius: 20px;
+      background: rgba(244, 204, 213, 0.28);
     }
 
     .theme-card {
@@ -3073,6 +3328,7 @@
     let currentAccountId = "";
     let accountMode = "list";
     let accountSubPage = "plans";
+    let accountThemeTopic = "";
     let supabaseClient = null;
     let cloudUser = null;
     let cloudSaveTimer = null;
@@ -3800,11 +4056,15 @@
       const ideas = state.inspirations.filter(item => item.accountId === account.id);
       const current = state.inspirations.find(item => item.id === editing.inspiration) || {};
       const isEditing = Boolean(editing.inspiration);
+      if (accountThemeTopic && !ideas.some(item => (item.topic || "未分类主题").trim() === accountThemeTopic)) {
+        accountThemeTopic = "";
+      }
+      const activeTopic = accountThemeTopic || "";
       const form = `
         ${isEditing ? editMiniBanner("正在编辑灵感标题", "inspiration") : ""}
         <form data-form="accountThemeTitle" class="form-grid">
           <input type="hidden" name="accountId" value="${account.id}" />
-          ${field("topic", isEditing ? "所属主题" : "新建主题", "例如：新家入住 / 浴室好物 / 通勤穿搭", "text", current.topic || "")}
+          ${field("topic", isEditing ? "所属主题" : (activeTopic ? "当前主题" : "新建主题"), "例如：新家入住 / 浴室好物 / 通勤穿搭", "text", current.topic || activeTopic || "")}
           ${isEditing
             ? field("title", "修改标题", "例如：新家的一百个快递：玄关收纳篇", "text", current.title || "")
             : textareaField("title", "批量添加标题", "一行一个标题，例如：\n新家的一百个快递：玄关收纳篇\n新家的一百个快递：厨房收纳篇\n新家的一百个快递：浴室收纳篇", current.title || "")}
@@ -3816,55 +4076,69 @@
           <div class="field field-full"><button class="btn btn-primary" type="submit">${isEditing ? "保存标题修改" : "批量保存标题"}</button></div>
         </form>
       `;
-      return miniModuleShell("灵感主题", "按主题管理当前账号标题，支持批量添加。", form, accountThemeGroups(ideas, account.id), isEditing);
+      return miniModuleShell(activeTopic || "灵感主题", "按主题管理当前账号标题，支持批量添加。", form, accountThemeGroups(ideas, account.id), isEditing);
     }
 
     function accountThemeGroups(ideas, accountId) {
-      if (!ideas.length) return `<div class="workspace-empty">还没有主题。先在左侧新建一个主题和第一个标题。</div>`;
+      if (!ideas.length) return `<div class="workspace-empty">还没有主题。点下方「新增灵感主题」先建一个主题。</div>`;
       const groups = ideas.reduce((acc, item) => {
         const topic = (item.topic || "未分类主题").trim();
         if (!acc[topic]) acc[topic] = [];
         acc[topic].push(item);
         return acc;
       }, {});
-      const overview = Object.entries(groups).map(([topic, items]) => `
-        <div class="theme-overview-card">
-          <strong>${escapeHtml(topic)}</strong>
-          <span class="tag tag-brand">${items.length} 个标题</span>
-        </div>
-      `).join("");
-      const details = Object.entries(groups).map(([topic, items], index) => `
-        <details class="theme-card" ${index === 0 ? "open" : ""}>
-          <summary>主题：${escapeHtml(topic)} · 点开后直接加标题</summary>
-          <div class="title-pill-list">
-            ${items.map((item, idx) => `
-              <div class="theme-title-row">
-                <div class="theme-title-main">${idx + 1}. ${escapeHtml(item.title)}</div>
-                <div class="topic-idea-meta">${escapeHtml(item.format || "短视频")} · ${escapeHtml(item.status || "待细化")} · 灵感分 ${escapeHtml(item.score || "4")}</div>
-                ${item.note ? `<div class="list-item-note">${escapeHtml(item.note)}</div>` : ""}
-                <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap">
-                  <button class="btn btn-sm" data-edit-record="inspirations" data-id="${item.id}" type="button">编辑标题</button>
-                  <button class="btn btn-sm" data-delete="inspirations" data-id="${item.id}" type="button">删除标题</button>
+      if (!accountThemeTopic) {
+        return `<div class="theme-app-list">
+          ${Object.entries(groups).map(([topic, items]) => {
+            const latest = items[0] || {};
+            return `
+              <button class="theme-app-card" data-open-theme="${escapeHtml(topic)}" type="button">
+                <div>
+                  <strong>${escapeHtml(topic)}</strong>
+                  <span>${items.length} 个标题${latest.title ? ` · 最新：${escapeHtml(latest.title)}` : ""}</span>
                 </div>
+                <i class="theme-arrow">›</i>
+              </button>
+            `;
+          }).join("")}
+        </div>`;
+      }
+      const items = groups[accountThemeTopic] || [];
+      return `
+        <div style="margin-bottom:12px">
+          <button class="btn btn-sm" data-back-themes type="button">← 返回主题列表</button>
+        </div>
+        <div class="title-pill-list">
+          ${items.map((item, idx) => `
+            <div class="theme-title-card">
+              <div class="theme-title-actions icon-actions">
+                <button class="icon-action" data-edit-record="inspirations" data-id="${item.id}" type="button" aria-label="编辑标题">✎</button>
+                <button class="icon-action danger" data-delete="inspirations" data-id="${item.id}" type="button" aria-label="删除标题">×</button>
               </div>
-            `).join("")}
-            <div class="theme-title-row" style="background:var(--brand-light)">
-              <form data-form="accountThemeTitle" class="form-grid">
-                <input type="hidden" name="accountId" value="${accountId}" />
-                <input type="hidden" name="topic" value="${escapeHtml(topic)}" />
-                ${textareaField("title", `给「${escapeHtml(topic)}」批量加标题`, "一行一个标题，不用再输入主题\n例如：标题 1\n标题 2\n标题 3")}
-                ${field("source", "来源 / 对标", "可选", "text")}
-                ${selectField("format", "形式", options(["短视频", "图文", "直播切片", "合集", "脚本"], "短视频"))}
-                ${selectField("status", "状态", options(["待细化", "可拍摄", "已安排", "已发布", "暂停"]))}
-                ${selectField("score", "灵感分", options(["1", "2", "3", "4", "5"], "4"))}
-                ${textareaField("note", "标题补充", "这个标题想怎么写、适合什么封面、是否能接广")}
-                <div class="field field-full"><button class="btn btn-primary" type="submit">批量添加到这个主题</button></div>
-              </form>
+              <div class="theme-title-index">标题 ${idx + 1}</div>
+              <div class="theme-title-main">${escapeHtml(item.title)}</div>
+              <div class="topic-idea-meta">${escapeHtml(item.format || "短视频")} · ${escapeHtml(item.status || "待细化")} · 灵感分 ${escapeHtml(item.score || "4")}</div>
+              ${item.note ? `<div class="list-item-note">${escapeHtml(item.note)}</div>` : ""}
             </div>
+          `).join("")}
+        </div>
+        <details class="account-add-panel theme-add-current">
+          <summary>给这个主题继续加标题</summary>
+          <div class="account-add-body">
+            <form data-form="accountThemeTitle" class="form-grid">
+              <input type="hidden" name="accountId" value="${accountId}" />
+              <input type="hidden" name="topic" value="${escapeHtml(accountThemeTopic)}" />
+              ${textareaField("title", "批量加标题", "一行一个标题\n例如：标题 1\n标题 2\n标题 3")}
+              ${field("source", "来源 / 对标", "可选", "text")}
+              ${selectField("format", "形式", options(["短视频", "图文", "直播切片", "合集", "脚本"], "短视频"))}
+              ${selectField("status", "状态", options(["待细化", "可拍摄", "已安排", "已发布", "暂停"]))}
+              ${selectField("score", "灵感分", options(["1", "2", "3", "4", "5"], "4"))}
+              ${textareaField("note", "标题补充", "这个标题想怎么写、适合什么封面、是否能接广")}
+              <div class="field field-full"><button class="btn btn-primary" type="submit">批量添加</button></div>
+            </form>
           </div>
         </details>
-      `).join("");
-      return `<div class="theme-overview">${overview}</div>${details}`;
+      `;
     }
 
     function accountCollabsModule(account) {
@@ -3940,6 +4214,15 @@
       return `<div class="edit-banner"><span>${text}</span><button class="btn btn-sm" data-cancel-record="${key}" type="button">取消编辑</button></div>`;
     }
 
+    function recordActions(type, id, editLabel = "编辑", deleteLabel = "删除") {
+      return `
+        <span class="icon-actions">
+          <button class="icon-action" data-edit-record="${type}" data-id="${id}" type="button" aria-label="${editLabel}" title="${editLabel}">✎</button>
+          <button class="icon-action danger" data-delete="${type}" data-id="${id}" type="button" aria-label="${deleteLabel}" title="${deleteLabel}">×</button>
+        </span>
+      `;
+    }
+
     function parseBenchmarkAccounts(value) {
       return String(value || "")
         .split(/\n|；|;/)
@@ -3984,7 +4267,7 @@
           </div>
           <div class="list-item-actions">
             <span class="status ${statusClass(item.status)}">${escapeHtml(item.status)}</span>
-            <button class="btn btn-sm" data-edit-record="collabs" data-id="${item.id}" type="button">编辑</button><button class="btn btn-sm" data-delete="collabs" data-id="${item.id}" type="button">删除</button>
+            ${recordActions("collabs", item.id)}
           </div>
         </div>
       `;
@@ -4076,7 +4359,7 @@
           </div>
           <div class="list-item-actions">
             <span class="status ${statusClass(item.status)}">${escapeHtml(item.status)}</span>
-            <button class="btn btn-sm" data-edit-record="inspirations" data-id="${item.id}" type="button">编辑</button><button class="btn btn-sm" data-delete="inspirations" data-id="${item.id}">删除</button>
+            ${recordActions("inspirations", item.id)}
           </div>
         </div>
       `;
@@ -4233,7 +4516,7 @@
           </div>
           <div class="list-item-actions">
             <span class="status ${statusClass(item.status)}">${escapeHtml(item.status)}</span>
-            <button class="btn btn-sm" data-edit-record="plans" data-id="${item.id}" type="button">改</button><button class="btn btn-sm" data-delete="plans" data-id="${item.id}">删</button>
+            ${recordActions("plans", item.id, "编辑安排", "删除安排")}
           </div>
         </div>
       `;
@@ -4342,7 +4625,7 @@
             <div class="progress-bar"><div class="progress-fill" style="width:${rate}%"></div></div>
           </div>
           <div class="list-item-actions">
-            <button class="btn btn-sm" data-edit-record="analytics" data-id="${item.id}" type="button">编辑</button><button class="btn btn-sm" data-delete="analytics" data-id="${item.id}">删除</button>
+            ${recordActions("analytics", item.id)}
           </div>
         </div>
       `;
@@ -4388,7 +4671,7 @@
             ${item.link ? `<div class="list-item-meta">${escapeHtml(item.link)}</div>` : ""}
           </div>
           <div class="list-item-actions">
-            <button class="btn btn-sm" data-edit-record="reports" data-id="${item.id}" type="button">编辑</button><button class="btn btn-sm" data-delete="reports" data-id="${item.id}">删除</button>
+            ${recordActions("reports", item.id)}
           </div>
         </div>
       `;
@@ -4687,6 +4970,11 @@
       URL.revokeObjectURL(url);
     }
 
+    function scrollAppTop() {
+      const content = document.querySelector(".content");
+      if (content) content.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     function render() {
       try {
         state = normalizeState(state);
@@ -4759,34 +5047,54 @@
         currentAccountId = enterAccountBtn.dataset.enterAccount;
         accountMode = "home";
         accountSubPage = "plans";
+        accountThemeTopic = "";
         editing.account = null;
         setPage("accounts");
         renderAccounts();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        scrollAppTop();
       }
 
       const backAccountsBtn = event.target.closest("[data-back-accounts]");
       if (backAccountsBtn) {
         accountMode = "list";
+        accountThemeTopic = "";
         editing.account = null;
         renderAccounts();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        scrollAppTop();
       }
 
       const backAccountHomeBtn = event.target.closest("[data-back-account-home]");
       if (backAccountHomeBtn) {
         accountMode = "home";
+        accountThemeTopic = "";
         Object.keys(editing).forEach(k => { if (k !== "account") editing[k] = null; });
         renderAccounts();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        scrollAppTop();
       }
 
       const accountSubBtn = event.target.closest("[data-account-sub]");
       if (accountSubBtn) {
         accountSubPage = accountSubBtn.dataset.accountSub;
         accountMode = "module";
+        accountThemeTopic = "";
         renderAccounts();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        scrollAppTop();
+      }
+
+      const openThemeBtn = event.target.closest("[data-open-theme]");
+      if (openThemeBtn) {
+        accountThemeTopic = openThemeBtn.dataset.openTheme;
+        renderAccounts();
+        scrollAppTop();
+        return;
+      }
+
+      const backThemesBtn = event.target.closest("[data-back-themes]");
+      if (backThemesBtn) {
+        accountThemeTopic = "";
+        renderAccounts();
+        scrollAppTop();
+        return;
       }
 
       const scrollAccountFormBtn = event.target.closest("[data-scroll-account-form]");
@@ -4834,9 +5142,10 @@
             currentAccountId = item.accountId;
             accountMode = "module";
             accountSubPage = subMap[type] || accountSubPage;
+            if (type === "inspirations") accountThemeTopic = (item.topic || "未分类主题").trim();
             setPage("accounts");
             renderAccounts();
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            scrollAppTop();
           } else {
             toast("这条记录没有绑定账号，请在全局模块里修改");
           }
@@ -4988,6 +5297,16 @@
         toast(`已找到 ${generated.filter(isHotResult).length} 条爆款结果`);
       }
     });
+
+    document.addEventListener("gesturestart", (event) => event.preventDefault());
+    document.addEventListener("gesturechange", (event) => event.preventDefault());
+    document.addEventListener("gestureend", (event) => event.preventDefault());
+    let lastTouchEnd = 0;
+    document.addEventListener("touchend", (event) => {
+      const now = Date.now();
+      if (now - lastTouchEnd <= 300) event.preventDefault();
+      lastTouchEnd = now;
+    }, { passive: false });
 
     applyTheme();
     render();
